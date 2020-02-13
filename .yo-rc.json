@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Jinna Balu",
+      "authorEmail": "jinna.balu@outlook.com",
+      "authorUrl": "https://jinnabalu.github.io/resume/"
+    }
+  }
+}
