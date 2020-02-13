@@ -1,2 +1,5 @@
 coverage
 **/templates
+generators/**/templates
+test-integration
+** 
