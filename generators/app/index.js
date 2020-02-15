@@ -27,12 +27,7 @@ module.exports = class extends Generator {
     // Have Yeoman greet the user.
     this.printLogo();
 
-    const prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    const prompts = this.getPrompts();
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
@@ -40,53 +35,69 @@ module.exports = class extends Generator {
     });
   }
 
+  getPrompts() {
+    return [{
+      type: 'confirm',
+      name: 'someAnswer',
+      message: 'Would you like to enable this option?',
+      default: true
+    }];
+  }
+
   printLogo() {
-    this.log('\n');
-    this.log(`${chalk.green('██        ██╗ ████████╗')}${chalk.red('  ███████╗  ██╗   ██╗ ██╗   ██╗ ')}${chalk.green('██        ██╗ ████████╗')}`);
-    this.log(`${chalk.green(' ██      ██║  ╚══██╔══╝')}${chalk.red('  ██    ██╗ ██║   ██║ ██║   ██║ ')}${chalk.green(' ██      ██║  ╚══██╔══╝')}`);
-    this.log(`${chalk.green('  ██    ██║      ██║   ')}${chalk.red('  ███████╔╝ ████████║ ██║   ██║ ')}${chalk.green('  ██    ██║      ██║   ')}`);
-    this.log(`${chalk.green('   ██  ██║       ██║  ')}${chalk.red('   ██    ██╗ ██╔═══██║ ██║   ██║ ')}${chalk.green('   ██  ██║       ██║  ')}`);
-    this.log(`${chalk.green('    ████╔╝    ████████╗ ')}${chalk.red(' ███████╔╝ ██║   ██║  ██████║  ')}${chalk.green('    ████╔╝    ████████╗ ')}`);
-    this.log(`${chalk.green('    ╚═══╝     ╚═╝   ╚═╝ ')}${chalk.red(' ╚══════╝  ╚═╝   ╚═╝  ╚════╝ ')}${chalk.green('      ╚═══╝     ╚═╝   ╚═╝ ')}\n`);
-    this.log(chalk.white.bold('                            https://generator.vibhuvi.com\n'));
-    this.log(chalk.white('Welcome to Vibhuvi ') + chalk.yellow(`v${packagejs.version}`));
-    this.log(chalk.white(`Application files will be generated in folder: ${chalk.yellow(process.cwd())}`));
-    if (process.cwd() === this.getUserHome()) {
-      this.log(chalk.red.bold('\n️⚠️  WARNING ⚠️  You are in your HOME folder!'));
-      this.log(
-        chalk.red('This can cause problems, you should always create a new directory and run the vibhuvi command from here.')
-      );
-      this.log(chalk.white(`See the troubleshooting section at ${chalk.yellow('https://generator.vibhuvi.tech/installation/')}`));
-    }
-    this.log(
-      chalk.green(
-        ' _______________________________________________________________________________________________________________\n'
-      )
-    );
-    this.log(
-      chalk.white(`  Documentation for creating an application is at ${chalk.yellow('https://generator.vibhuvi.com/creating-an-app/')}`)
-    );
     this.log(
       chalk.white(
-        `  If you find Vibhuvi useful, consider sponsoring the project at ${chalk.yellow(
-                'https://opencollective.com/generator-vibhuvi'
-            )}`
+        ' ____________________________________________________________________________________'
       )
     );
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|   ██        ██╗ ████████╗')}${chalk.cyan('  ███████╗  ██╗   ██╗ ██╗   ██╗ ')}${chalk.white('██        ██╗ ████████╗   |')}`);
+    this.log(`${chalk.white('|    ██      ██╔╝ ╚══██╔══╝')}${chalk.cyan('  ██    ██╗ ██║   ██║ ██║   ██║ ')}${chalk.white(' ██      ██╔╝ ╚══██╔══╝   |')}`);
+    this.log(`${chalk.white('|     ██    ██╔╝     ██║   ')}${chalk.cyan('  ███████╔╝ ████████║ ██║   ██║ ')}${chalk.white('  ██    ██╔╝     ██║      |')}`);
+    this.log(`${chalk.white('|      ██  ██╔╝      ██║  ')}${chalk.cyan('   ██    ██╗ ██╔═══██║ ██║   ██║ ')}${chalk.white('   ██  ██╔╝      ██║      |')}`);
+    this.log(`${chalk.white('|       ████╔╝    ████████╗ ')}${chalk.cyan(' ███████╔╝ ██║   ██║  ██████╔╝ ')}${chalk.white('    ████╔╝    ████████╗   |')}`);
+    this.log(`${chalk.white('|       ╚═══╝     ╚═══════╝ ')}${chalk.cyan(' ╚══════╝  ╚═╝   ╚═╝   ╚════╝ ')}${chalk.white('     ╚═══╝     ╚═══════╝   |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(chalk.white.bold('|                              Containerise Everything                               |'));
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(chalk.white.bold('|                            https://generator.vibhuvi.com                           |'));
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                      ________________________________________                      |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(chalk.white('|        Welcome to Vibhuvi ') + chalk.green(`v${packagejs.version}${chalk.white('                                                   |')}`));
+    this.log(chalk.white(`|        App and Containerization conf files will be generated in PWD                |`));
+    if (process.cwd() === this.getUserHome()) {
+      this.log(`${chalk.white('|                                                                                    |')}`);
+      this.log(chalk.cyan.bold('|    ⚠️  WARNING ⚠️  You are in your HOME folder!                                      |'));
+      this.log(`${chalk.white('|                                                                                    |')}`);
+      this.log(
+        chalk.cyan('   This can cause problems, you should always create a new directory and run the vibhuvi command from here.')
+      );
+      this.log(`${chalk.white('|                                                                                    |')}`);
+      this.log(chalk.white(`|   See the troubleshooting section at ${chalk.green('https://generator.vibhuvi.tech/installation/')}  |`));
+    }
+   
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                      ________________________________________                      |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(
-      chalk.green(
-        ' _______________________________________________________________________________________________________________\n'
+      chalk.white(`|        Documentation : ${chalk.green('https://generator.vibhuvi.com/creating-an-app/')}              |`)
+    );
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(`${chalk.white('|                                                                                    |')}`);
+    this.log(
+      chalk.white(
+        '|____________________________________________________________________________________|\n'
       )
     );
   }
 
-  writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
-  }
-
+  
   install() {
     this.installDependencies();
   }
@@ -97,6 +108,4 @@ module.exports = class extends Generator {
   getUserHome() {
     return process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME'];
   }
-
-
 };
