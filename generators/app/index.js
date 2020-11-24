@@ -39,7 +39,7 @@ module.exports = class extends Generator {
     return [{
       type: 'confirm',
       name: 'someAnswer',
-      message: 'Would you like to enable this option?',
+      message: 'Would you like to contribute?',
       default: true
     }];
   }
@@ -61,15 +61,18 @@ module.exports = class extends Generator {
     this.log(`${chalk.white('|       ╚═══╝     ╚═══════╝ ')}${chalk.cyan(' ╚══════╝  ╚═╝   ╚═╝   ╚════╝ ')}${chalk.white('     ╚═══╝     ╚═══════╝   |')}`);
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(`${chalk.white('|                                                                                    |')}`);
-    this.log(chalk.white.bold('|                              Containerise Everything                               |'));
-    this.log(`${chalk.white('|                                                                                    |')}`);
-    this.log(chalk.white.bold('|                            https://generator.vibhuvi.com                           |'));
+    this.log(chalk.white.bold('|                              Natural Farmers Network                               |'));
+    this.log(chalk.white.bold('|                                  Natural  Gardener                                 |'));
+    this.log(chalk.white.bold('|                            Heirloom  Seed Conservators                             |'));
+    this.log(`${chalk.white('|                                    Technology                                      |')}`);
+    this.log(`${chalk.magenta('|                                 True End Consumers                                 |')}`);
+    this.log(chalk.white.bold('|                                https://vibhuvi.com                                 |'));
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(`${chalk.white('|                      ________________________________________                      |')}`);
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(chalk.white('|        Welcome to Vibhuvi ') + chalk.green(`v${packagejs.version}${chalk.white('                                                   |')}`));
-    this.log(chalk.white(`|        App and Containerization conf files will be generated in PWD                |`));
+    this.log(chalk.cyan(`|        Heirloom Seed Savers, Natural Farmers and True End Consumers                |`));
     if (process.cwd() === this.getUserHome()) {
       this.log(`${chalk.white('|                                                                                    |')}`);
       this.log(chalk.cyan.bold('|    ⚠️  WARNING ⚠️  You are in your HOME folder!                                      |'));
@@ -86,7 +89,7 @@ module.exports = class extends Generator {
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(
-      chalk.white(`|        Documentation : ${chalk.green('https://generator.vibhuvi.com/creating-an-app/')}              |`)
+      chalk.white(`|        Documentation : ${chalk.green('https://vibhuvi.com/we-are-here')}                             |`)
     );
     this.log(`${chalk.white('|                                                                                    |')}`);
     this.log(`${chalk.white('|                                                                                    |')}`);
